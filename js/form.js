@@ -51,6 +51,7 @@ function exibirPaciente(paciente){
 
 function exibirErros(erros){
   var listaErros = document.querySelector("#mensagem-erro");
+  listaErros.innerHTML = "";
 
   erros.forEach(function(erro){
     var itemErro = document.createElement("li");

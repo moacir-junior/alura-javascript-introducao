@@ -41,12 +41,28 @@ function validarPeso(peso){
 function validarPaciente(paciente){
   var erros = Array();
 
-  if(!validarAltura(paciente.altura)){
-    erros.push("Altura inválida");
+  if(!paciente.nome.length){
+    erros.push("Nome precisa ser informado");
   }
 
-  if(!validarPeso(paciente.peso)){
-    erros.push("Peso inválido");
+  if(paciente.altura.length){
+    if(!validarAltura(paciente.altura)){
+      erros.push("Altura inválida");
+    }
+  }else{
+    erros.push("Altura precisa ser informada");
+  }
+
+  if(paciente.peso.length){
+    if(!validarPeso(paciente.peso)){
+      erros.push("Peso inválido");
+    }
+  }else{
+    erros.push("Peso precisa ser informado");
+  }
+
+  if(!paciente.gordura.length){
+    erros.push("Gordura precisa ser informada");
   }
 
   return erros;
